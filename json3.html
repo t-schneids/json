@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON</title>
+        <link rel="stylesheet" href="json2.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script>
+            function print(products, preference) {
+                container = document.querySelector(".container");
+                    for (var i = 0; i < products.length; i++) {
+                        for (var c = 0; c < products[i].catagories.length; c++) {
+                            if (products[i].catagories[c] == preference) {
+                                s = "";
+                                s = "<div class= \"product\">"
+                                s += "<h2>" + products[i].name + "</h2> <br/>"
+                                s += "<p>" + products[i].description + "<p>";
+                                s += "<p> Size:" + products[i].size + "<p>";
+                                s += "<p> Price:" + products[i].price + "<p>";
+                        
+                                s+= "<p>"
+                                for (var j = 0; j < products[i].catagories.length; j++) {
+                                    if (j = products[i].catagories.length - 1) {
+                                        s += products[i].catagories[j];
+                                    } else {
+                                        s += products[i].catagories[j] + ", "
+                                    }
+                                }
+                                s += "</p> </div>";
+                                container.innerHTML += s;
+                            }
+                        }
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container"></div>
+        <form id="form">
+            <label for="dropDown">Choose Preference:</label>
+            <select id="dropDown">
+                <option value="option1">Sportswear</option>
+                <option value="option2">Clothing</option>
+                <option value="option3">Outdoors</option>
+            </select>
+
+            <input type="button" id="filter" value="filter">
+        </form>
+
+        <div id="information"></div>
+
+        <script>
+
+            $(document).ready(function () {
+                $.get("products.json", 
+                  function(data) {
+                    products = JSON.stringify(data);
+                    products = JSON.parse(products);
+
+                    button = $("#filter");
+                    info = $("#information");
+
+                    button.on("click", function() {
+                        preference = $("#dropDown option:selected").text();
+                        
+                        print(products, preference);
+                    })
+                  })
+            })
+
+        </script>
+    </body>
+</html>
