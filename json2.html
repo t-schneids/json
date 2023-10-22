@@ -10,7 +10,8 @@
         <script>
             $.get("products.json", 
                   function(data) {
-                    products = JSON.parse(data);
+                    products = JSON.stringify(data);
+                    products = JSON.parse(products);
 
                     container = document.querySelector(".container");
                     for (var i = 0; i < products.length; i++) {
