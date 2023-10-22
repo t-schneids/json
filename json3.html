@@ -7,7 +7,8 @@
 
         <script>
             function print(products, preference) {
-                container = document.querySelector(".container");
+                container = document.querySelector("#information");
+                container.innerHTML = "";
                     for (var i = 0; i < products.length; i++) {
                         for (var c = 0; c < products[i].catagories.length; c++) {
                             if (products[i].catagories[c] == preference) {
