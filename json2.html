@@ -19,10 +19,10 @@
                         s = "<div class= product>"
                         s += "<h2>" + products[i].name + "</h2>"
                         s += "<p>" + products[i].description + "<p>";
-                        s += "<p> Size:" + products[i].size + "<p>";
-                        s += "<p> Price:" + products[i].price + "<p>";
+                        s += "<p> Size: " + products[i].size + "<p>";
+                        s += "<p> Price: " + products[i].price + "<p>";
                         
-                        s+= "<p>"
+                        s+= "<p> Categories:"
                         for (var j = 0; j < products[i].catagories.length; j++) {
                             if (j = products[i].catagories.length - 1) {
                                 s += products[i].catagories[j];
