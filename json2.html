@@ -11,15 +11,16 @@
             $.get("products.json", 
                   function(data) {
                     products = JSON.parse(data);
-                  })
-            
-            container = document.querySelector(".container");
-            for (var i = 0; i < products.length; i++) {
-                s = "";
-                s += "<h2>" + products[i].name + "</h2> <br/>"
 
-                container.innerHTML += s;
-            }
+                    container = document.querySelector(".container");
+                    for (var i = 0; i < products.length; i++) {
+                    s = "";
+                    s += "<h2>" + products[i].name + "</h2> <br/>"
+
+                    container.innerHTML += s;
+                    }
+                  })
+           
         </script>
     </body>
 </html>
