@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON STRING</title>
+    </head>
+    <body>
+        <script>
+            products = [
+            {
+                name: "Biking Gloves",
+                description: "Gloves to prevent tears on the hands while biking.",
+                size: "Medium",
+                price: "$20",
+                catagories: ["Sportswear", "Clothing"]
+            },
+            {
+                name: "Travel Bandana",
+                description: "Keeps the sweat off your forehead, allowing for more strenuous adventures",
+                size: "Medium",
+                price: "$15",
+                catagories: ["Sportswear", "Clothing", "Outdoors"]
+            },
+            {
+                name: "Waterproof Socks",
+                description: "Socks to prevent your feet from getting wet",
+                size: "Large",
+                price: "$30",
+                catagories: ["Clothing", "Outdoors"]
+            },
+            {
+                name: "Compression Shirt",
+                description: "Reduces muscle soreness and fatigue. Helps wick away moisture keeping you warm.",
+                size: "Small",
+                price: "$30",
+                catagories: ["Sportswear" ,"Clothing"]
+            },
+            {
+                name: "Wool Sweater",
+                description: "Reliable material to keep you warm.",
+                size: "Extra Large",
+                price: "$50",
+                catagories: ["Clothing", "Outdoors"]
+            },
+            {
+                name: "Mesh Cap",
+                description: "Breathable. Wicks away sweat. Keeps you cool.",
+                size: "Large",
+                price: "$30",
+                catagories: ["Clothing", "Outdoors"]
+            },
+            {
+                name: "Orange Skort",
+                description: "Comfortable and Reliable. Sporty and fashionable.",
+                size: "Medium",
+                price: "$40",
+                catagories: ["Sportswear" ,"Clothing"]
+            },
+            {
+                name: "Pocket Flashlight",
+                description: "Ready at your convenience. Light and transportable.",
+                size: "Small",
+                price: "$20",
+                catagories: ["Outdoors"]
+            },
+            {
+                name: "Raincoat",
+                description: "Keeps you dry at all times",
+                size: "Large",
+                price: "$60",
+                catagories: ["Clothing" ,"Outdoors"]
+            },
+            {
+                name: "Snow Shoes",
+                description: "Perfect for adventurers looking to hike in the heart of winter",
+                size: "Medium",
+                price: "$80",
+                catagories: ["Clothing" ,"Outdoors"]
+            },
+            {
+                name: "Ear Muffs",
+                description: "Keep your ears warm even when its cold",
+                size: "Small",
+                price: "$20",
+                catagories: ["Clothing"]
+            },
+            {
+                name: "Running Shoes",
+                description: "Supportive and comfortable for long runs/walks",
+                size: "Large",
+                price: "$90",
+                catagories: ["Sportswear", "Clothing", "Outdoors"]
+            }
+            ];
+
+            strProducts = JSON.stringify(products);
+            document.write(strProducts);
+            
+        </script>
+    </body>
+</html>
+
+<product>
+    <name>Pocket Flashlight</name>
+    <description> Ready at your convenience. Light and transportable.
+    </description>
+    <size> Small</size>
+    <price>$20</price>
+    <catagories>
+        <first></first>
+        <second></second>
+        <third>Outdoors</third>
+    </catagories>
+</product>
