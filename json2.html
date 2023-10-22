@@ -15,10 +15,23 @@
 
                     container = document.querySelector(".container");
                     for (var i = 0; i < products.length; i++) {
-                    s = "";
-                    s += "<h2>" + products[i].name + "</h2> <br/>"
-
-                    container.innerHTML += s;
+                        s = "";
+                        s = "<div class= product>"
+                        s += "<h2>" + products[i].name + "</h2> <br/>"
+                        s += "<p>" + products[i].description + "<p>";
+                        s += "<p> Size:" + products[i].size + "<p>";
+                        s += "<p> Price:" + products[i].price + "<p>";
+                        
+                        s+= "<p>"
+                        for (var j = 0; j < products[i].categories.length; j++) {
+                            if (j = products[i].categories.length - 1) {
+                                s += products[i].categories[j];
+                            } else {
+                                s += products[i].categories[j] + ", "
+                            }
+                        }
+                        s += "</p> </div>";
+                        container.innerHTML += s;
                     }
                   })
            
