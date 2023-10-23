@@ -28,6 +28,16 @@
                         }
                     }
             }
+
+            function makeOption(arr) {
+                dropDown = document.querySelector("#dropDown");
+                temp = "";
+                for (let i = 0; i < arr.length; i++) {
+                    temp += "<option>" + arr[i] + "</option>"
+                }
+
+                dropDown.innerHTML += temp;
+            }
         </script>
     </head>
     <body>
@@ -35,9 +45,6 @@
         <form id="form">
             <label for="dropDown">Choose Preference:</label>
             <select id="dropDown">
-                <option value="option1">Sportswear</option>
-                <option value="option2">Clothing</option>
-                <option value="option3">Outdoors</option>
             </select>
 
             <input type="button" id="filter" value="filter">
@@ -48,10 +55,23 @@
         <script>
 
             $(document).ready(function () {
-                $.get("products.json", 
+                $.get("https://t-schneids.github.io/json/products.json", 
                   function(data) {
                     products = JSON.stringify(data);
                     products = JSON.parse(products);
+
+                    arr = []
+                    for (let i = 0; i < products.length; i++) {
+                        for (let j = 0; j < products[i].catagories.length; j++) {
+                            if (!arr.includes(products[i].catagories[j])) {
+                                arr.push(products[i].catagories[j]);
+                            }
+                        }
+                    }
+
+                    makeOption(arr);
+
+
 
                     button = $("#filter");
                     info = $("#information");
