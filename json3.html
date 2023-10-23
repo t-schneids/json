@@ -12,6 +12,12 @@
             }
         </style>
         <script>
+
+            // print
+            // parameters: products (array of products)
+            //             preference - the prefered category
+            // Purpose: to print all the product names matching preference
+            // returns: nothing
             function print(products, preference) {
                 container = document.querySelector("#information");
                 container.innerHTML = "";
@@ -29,6 +35,10 @@
                     }
             }
 
+            // print
+            // parameters: arr - an array of categories
+            // Purpose: to make options from the array
+            // returns: nothing
             function makeOption(arr) {
                 dropDown = document.querySelector("#dropDown");
                 temp = "";
